@@ -97,6 +97,7 @@ public class Excavate {
         }
         var block = ExcavateHelper.getBlockAt(level, pos);
         if (block != null
+                && ExcavateHelper.isSameChunk(this.startPos, pos)
                 && ExcavateHelper.isTheSameBlock(startBlockHolder, block.getBlockHolder(), shape != Shape.NONE)
                 && ExcavateHelper.canMine(level, startPos, pos)
                 && ExcavateHelper.checkTool(player, startTool, stopBeforeToolBroken, stopAfterToolBroken)

@@ -56,6 +56,17 @@ public class ExcavateHelper {
         return original.is(newBlock);
     }
 
+    public static boolean isSameChunk(BlockPos startPos, BlockPos pos)
+    {
+        if (!ConfigHelper.getConfig().common.chunkMining)
+        {
+            return true;
+        }
+
+        return (startPos.getX() >> 4) == (pos.getX() >> 4) &&
+                (startPos.getZ() >> 4) == (pos.getZ() >> 4);
+    }
+
     public static boolean isBlockBlocked(Holder<Block> block) {
         var config = ConfigHelper.getConfig().common;
         if (config.asAllowlist) {

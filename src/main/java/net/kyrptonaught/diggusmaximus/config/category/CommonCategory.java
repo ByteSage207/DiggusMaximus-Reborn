@@ -20,6 +20,9 @@ public class CommonCategory implements ConfigData {
     public boolean enabled = true;
 
     @ConfigEntry.Gui.Tooltip
+    public boolean chunkMining = false;
+
+    @ConfigEntry.Gui.Tooltip
     public boolean sneakToExcavate = false;
 
     @ConfigEntry.Gui.Tooltip
